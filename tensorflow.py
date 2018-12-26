@@ -69,15 +69,16 @@ with tf.Session() as sess:
 
 
 with tf.Session() as sess:
-y_val, z_val = sess.run([y, z])
-print(y_val) # 10
-print(z_val) # 15
+    y_val, z_val = sess.run([y, z])
+    print(y_val) # 10
+    print(z_val) # 15
 
 
-#In single-process TensorFlow, multiple sessions do not share any state, even if they reuse the same graph (each
+# In single-process TensorFlow, multiple sessions do not share any state, even if they reuse the same graph (each
 # session would have its own copy of every variable). In distributed TensorFlow, variable state is stored on the
-#  servers, not in the sessions, so multiple sessions can share the same variables.
+# servers, not in the sessions, so multiple sessions can share the same variables.
 
+# Linear regression closed form solution using tensorflow
 import numpy as np
 from sklearn.datasets import fetch_california_housing
 housing = fetch_california_housing()
@@ -91,7 +92,7 @@ with tf.Session() as sess:
     theta_value = theta.eval()
 
 
-# Linear regression using tensorflow
+# Linear regression gradient descent solution using tensorflow
 
 n_epochs = 1000
 learning_rate = 0.01
