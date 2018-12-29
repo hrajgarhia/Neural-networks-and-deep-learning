@@ -1,4 +1,4 @@
-print(tensorflow.__version__)
+#print(tensorflow.__version__)
 
 import tensorflow as tf
 
